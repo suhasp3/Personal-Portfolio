@@ -1,47 +1,143 @@
-body{
-    background-color: #EEEEEE;
+/* General styles */
+body {
+  background-color: #EEEEEE;
 }
 
-.nav-item{
-    background-color: #EEEEEE;
+.nav-item {
+  background-color: #EEEEEE;
 }
 
-.nav-link{
-    color: #31363F
+.nav-link {
+  color: #31363F;
 }
 .nav-pills .nav-link:hover {
-    color: #76ABAE;
-  }
-  .highlight {
-    font-weight: bold;
-    color: #76ABAE;
-  }
+  color: #76ABAE;
+}
 
-  
-  .underline {
-    text-decoration: underline;
-    text-decoration-color: #76ABAE;
-  }
+.highlight {
+  font-weight: bold;
+  color: #76ABAE;
+}
 
-  p{
-    color: #31363F
-  }
+.underline {
+  text-decoration: underline;
+  text-decoration-color: #76ABAE;
+}
 
-  .green-outline{
-    border-color:#76ABAE;
-  }
+p {
+  color: #31363F;
+}
 
-  .green-background{
-    background-color: #76ABAE;
-    border-color: #31363F;
-  }
+.green-outline {
+  border-color: #76ABAE;
+}
 
-  .green-background:hover {
-    background-color: #628f91;
+.green-background {
+  background-color: #76ABAE;
+  border-color: #31363F;
+}
+
+.green-background:hover {
+  background-color: #628f91;
+}
+
+.pfp {
+  border: 4px solid #76ABAE;
+  border-radius: 50%;
+}
+
+/* Slide-in animation */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
   }
-  
-  .pfp{
-    border: 4px solid #76ABAE;
-    border-radius: 50%;
-    
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
+}
+
+h1.display-5 {
+  animation: slideInLeft 1s ease-out;
+}
+
+/* Slide-in from bottom animation */
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pfp {
+  animation: slideInBottom 1s ease-out;
+}
+
+.lead {
+  animation: slideInLeft 1s ease-out;
+}
+
+.d-grid .btn {
+  animation: slideInLeft 1s ease-out;
+}
+
+/* Project Card Border Animation */
+@keyframes gradient-border {
+  0% {
+    border-color: #76ABAE;
+  }
+  25% {
+    border-color: #4B8F94;
+  }
+  50% {
+    border-color: #367E7E;
+  }
+  75% {
+    border-color: #4B8F94;
+  }
+  100% {
+    border-color: #76ABAE;
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(118, 171, 174, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(118, 171, 174, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(118, 171, 174, 0.5);
+  }
+}
+
+.card {
+  border: 4px solid transparent;
+  border-radius: 15px;
+  background-image: linear-gradient(#EEEEEE, #EEEEEE),
+    linear-gradient(45deg, #76ABAE, #4B8F94, #367E7E, #4B8F94, #76ABAE);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect for Shiny/Glowy Border */
+.card:hover {
+  transform: translateY(-5px);
+  animation: glow 1.5s infinite alternate;
+}
+
+.card img {
+  border-radius: 12px;
+}
+
+/* Make the card content more prominent */
+.card-text {
+  color: #31363F;
+}
